@@ -1,0 +1,44 @@
+import React, { MouseEventHandler } from 'react';
+import Image from 'next/image';
+
+type Props = {
+  title: string;
+  type?: 'button' | 'submit';
+  leftIcon?: string | null;
+  rightIcon?: string | null;
+  isSubmitting?: boolean;
+  handleClick?: MouseEventHandler;
+  bgColor?: string;
+  textColor?: string;
+};
+
+const Button = ({
+  title,
+  type,
+  leftIcon,
+  rightIcon,
+  isSubmitting,
+  handleClick,
+  bgColor,
+  textColor
+}: Props) => {
+  return (
+    <button
+      type={type || 'button'}
+      disabled={isSubmitting}
+      className={`flexCenter gap-3 px-4 py-3
+      ${textColor || 'text-white'}
+      ${isSubmitting ? 'bg-black/50' : bgColor || 'bg-primary-purple'}
+      rounded-xl text-sm font-medium max-md:w-full
+      
+      `}
+      onClick={handleClick}
+    >
+      {leftIcon && <Image src={leftIcon} alt={'left icon'} width={14} height={14} />}
+      {title}
+      {rightIcon && <Image src={rightIcon} alt={'right icon'} width={14} height={14} />}
+    </button>
+  );
+};
+
+export default Button;
