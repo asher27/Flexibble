@@ -7,6 +7,8 @@ import Link from "next/link";
 import Image from 'next/image';
 import ProjectActions from "@/components/ProjectActions";
 import RelatedProjects from "@/components/RelatedProjects";
+
+
 const Project = async ({params: {id}} : {params: {id: string}}) => {
 
     const session = await getCurrentUser();

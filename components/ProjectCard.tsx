@@ -3,6 +3,7 @@
 import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {useRouter} from "next/navigation";
 
 type Props = {
   id: string;
@@ -13,6 +14,8 @@ type Props = {
   userId: string;
 };
 const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
+
+  const router = useRouter();
 
   const [randomLikes, setRandomLikes] = useState(0);
   const [randomViews, setRandomViews] = useState('');
@@ -37,6 +40,8 @@ const ProjectCard = ({ id, image, title, name, avatarUrl, userId }: Props) => {
           <p className={'w-full'}>{title}</p>
         </div>
       </Link>
+
+
 
       <div className={'flexBetween w-full px-2 mt-3 font-semibold text-sm'}>
         <Link href={`/profile/${userId}`}>
