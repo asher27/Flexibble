@@ -9,7 +9,6 @@ const Categories = () => {
   const pathName = usePathname();
   const searchParams = useSearchParams();
 
-
   const category = searchParams.get('category');
   const handleTag = (filter: string) => {
     router.push(`${pathName}?category=${filter}`);
@@ -26,7 +25,9 @@ const Categories = () => {
             className={`${
               filter === category ? 'bg-light-white-300 font-medium' : 'font-normal'
             } px-4 py-3 rounded-lg capitalize whitespace-nowrap`}
-          >{filter}</button>
+          >
+            {filter}
+          </button>
         ))}
       </ul>
     </div>
