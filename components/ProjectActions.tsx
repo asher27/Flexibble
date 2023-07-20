@@ -26,9 +26,10 @@ const ProjectActions = ({ projectId }: { projectId: string }) => {
 
   return (
     <>
-      <Link href={`/edit-project/${projectId}`} className={'flexCenter edit-action_btn'}>
+      <Link href={`/edit-project/${projectId}`} className={'flexCenter edit-action_btn'} >
         <Image src={'/pencile.svg'} alt={'edit'} width={15} height={15} />
       </Link>
+
 
       <button
         type={'button'}

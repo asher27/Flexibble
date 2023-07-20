@@ -11,6 +11,7 @@ import {
   updateProjectMutation
 } from '@/graphql';
 import { ProjectForm } from '@/common.types';
+import {options} from "preact";
 
 // const isProduction = process.env.NODE_ENV === 'production';
 const isProduction = true;
@@ -21,7 +22,7 @@ const apiKey = isProduction ? process.env.NEXT_PUBLIC_GRAFBASE_API_KEY || '' : '
 
 const serverUrl = isProduction ? process.env.NEXT_PUBLIC_SERVER_URL || '' : 'http://localhost:3000';
 
-const client = new GraphQLClient(apiUrl);
+const client = new GraphQLClient(apiUrl, );
 
 const makeGraphQLRequest = async (query: string, variables = {}) => {
   try {
