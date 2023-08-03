@@ -28,7 +28,6 @@ const LoadMore = ({ startCursor, endCursor, hasPreviousPage, hasNextPage }: Prop
     const newPathname = `${window.location.pathname}?${newSearchParams}`;
 
     router.push(newPathname);
-
   };
 
   return (
